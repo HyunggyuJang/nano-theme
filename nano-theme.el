@@ -16,8 +16,6 @@
 ;; You should have received a copy of the GNU General Public License
 ;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ;; ---------------------------------------------------------------------
-(require 'disp-table)
-
 (deftheme nano
   "N Λ N O Theme")
 
@@ -205,105 +203,6 @@ background color that is barely perceptible."
 (defface nano-default-i nil
   "Default face inversed." :group nil)
 
-(defun nano-setup ()
-  "Defaults settings for nano (optional)"
-
-  ;; Use nano fonts
-  (setq nano-fonts-use t)
-  
-  ;; No startup  screen
-  (setq inhibit-startup-screen t)
-
-  ;; No startup message
-  (setq inhibit-startup-message t)
-  (setq inhibit-startup-echo-area-message t)
-
-  ;; No message in scratch buffer
-  (setq initial-scratch-message nil)
-
-  ;; Initial buffer
-  (setq initial-buffer-choice nil)
-
-  ;; No frame title
-  (setq frame-title-format nil)
-
-  ;; No file dialog
-  (setq use-file-dialog nil)
-
-  ;; No dialog box
-  (setq use-dialog-box nil)
-
-  ;; No popup windows
-  (setq pop-up-windows nil)
-
-  ;; No empty line indicators
-  (setq indicate-empty-lines nil)
-
-  ;; No cursor in inactive windows
-  (setq cursor-in-non-selected-windows nil)
-
-  ;; Text mode is initial mode
-  (setq initial-major-mode 'text-mode)
-
-  ;; Text mode is default major mode
-  (setq default-major-mode 'text-mode)
-
-  ;; Moderate font lock
-  (setq font-lock-maximum-decoration nil)
-
-  ;; No limit on font lock
-  (setq font-lock-maximum-size nil)
-
-  ;; No line break space points
-  (setq auto-fill-mode nil)
-
-  ;; Fill column at 80
-  (setq fill-column 80)
-
-  ;; Bar cursor
-  (setq-default cursor-type '(hbar .  2))
-  (setq-default cursor-in-non-selected-windows nil)
-  (setq blink-cursor-mode nil)
-
-  ;; No scroll bars
-  (if (fboundp 'scroll-bar-mode)
-      (scroll-bar-mode -1))
-
-  ;; No toolbar
-  (if (fboundp 'tool-bar-mode)
-      (tool-bar-mode nil))
-
-  ;; Default frame settings
-  (setq default-frame-alist
-        (append (list
-	             '(min-height . 1)  '(height . 45)
-	             '(min-width  . 1)  '(width  . 81)
-                 '(vertical-scroll-bars . nil)
-                 '(internal-border-width . 24)
-                 '(left-fringe . 0)
-                 '(right-fringe . 0)
-                 '(tool-bar-lines . 0)
-                 '(menu-bar-lines . 0))))
-
-  ;; Line spacing (in pixels)
-  (setq line-spacing 0)
-  
-  ;; Vertical window divider
-  (setq window-divider-default-right-width 24)
-  (setq window-divider-default-places 'right-only)
-  (window-divider-mode 1)
-
-  ;; Nicer glyphs for continuation and wrap 
-  (set-display-table-slot standard-display-table
-			              'truncation (make-glyph-code ?… 'nano-faded))
-  (set-display-table-slot standard-display-table
-			              'wrap (make-glyph-code ?… 'nano-faded))
-
-  ;; Nerd font for glyph icons
-  (set-fontset-font t '(#xe000 . #xffdd)
-                    (font-spec :name "RobotoMono Nerd Font Mono")))
-
-
 (defun nano-light ()
   "Nano theme light"
   
@@ -393,17 +292,17 @@ background color that is barely perceptible."
        'nano
        `(default ((,light (:foreground ,nano-light-foreground
                            :weight     ,(face-attribute 'nano-mono :weight)
-		                   :height     ,(face-attribute 'nano-mono :height)
+                           :height     ,(face-attribute 'nano-mono :height)
                            :family     ,(face-attribute 'nano-mono :family)))
                   (,dark  (:foreground ,nano-dark-foreground
                            :weight     ,(face-attribute 'nano-mono :weight)
-		                   :height     ,(face-attribute 'nano-mono :height)
+                           :height     ,(face-attribute 'nano-mono :height)
                            :family     ,(face-attribute 'nano-mono :family)))))
        `(nano-strong ((,light (:weight normal))
-		              (,dark  (:weight normal))))
+                      (,dark  (:weight normal))))
        `(variable-pitch  ((t (:weight ,(face-attribute 'nano-sans :weight)
-				              :height ,(face-attribute 'nano-sans :height)
-				              :family ,(face-attribute 'nano-sans :family)))))))
+                              :height ,(face-attribute 'nano-sans :height)
+                              :family ,(face-attribute 'nano-sans :family)))))))
 
     ;; Enforce nano fonts
   (if (not nano-fonts-use)
@@ -412,8 +311,7 @@ background color that is barely perceptible."
        `(default ((,light (:foreground ,nano-light-foreground))
                   (,dark  (:foreground ,nano-dark-foreground))))
        `(nano-strong ((,light (:weight bold))
-		              (,dark  (:weight bold))))))
-
+                      (,dark  (:weight bold))))))
 
   
   (custom-theme-set-faces

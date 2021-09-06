@@ -496,7 +496,7 @@ background color that is barely perceptible."
                          :underline ,nano-light-subtle))
 		(,dark  (:height 0.1
                          :foreground ,nano-dark-background
-                         :background ,nano-dark-foreground
+                         :background ,nano-dark-background
                          :underline ,nano-dark-subtle))))
    `(mode-line-highlight ((t (:inherit nano-popout))))
    `(mode-line-buffer-id ((t (:weight regular))))
@@ -508,7 +508,7 @@ background color that is barely perceptible."
                                   :underline ,nano-light-subtle))
                          (,dark  (:height 0.1
                                   :foreground ,nano-dark-background
-                                  :background ,nano-dark-foreground
+                                  :background ,nano-dark-background
                                   :underline ,nano-dark-subtle))))
 
    `(header-line ((,light (:foreground ,nano-light-foreground

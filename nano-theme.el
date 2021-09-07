@@ -827,14 +827,6 @@ background color that is barely perceptible."
                              :background "#FFF9C4")))) ;; material color yellow L100
     ))
 
-(dolist (buffer (list " *Minibuf-0*" " *Echo Area 0*"
-                      " *Minibuf-1*" " *Echo Area 1*"))
-  (when (get-buffer buffer)
-    (with-current-buffer buffer
-      (face-remap-add-relative 'default 'nano-faded))))
-
-(setq x-underline-at-descent-line t)
-
 ;;;###autoload
 (when (and (boundp 'custom-theme-load-path) load-file-name)
   (add-to-list 'custom-theme-load-path

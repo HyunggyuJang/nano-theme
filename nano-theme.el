@@ -203,65 +203,6 @@ background color that is barely perceptible."
 (defface nano-default-i nil
   "Default face inversed." :group nil)
 
-(defun nano-light ()
-  "Nano theme light"
-  
-  (interactive)
-  (setq widget-image-enable nil)
-  (setq x-underline-at-descent-line t)
-  (set-foreground-color nano-light-foreground)
-  (set-face-background 'internal-border nano-light-background (selected-frame))
-  (custom-set-variables '(frame-background-mode 'light))
-  (load-theme 'nano t)
-  (set-frame-parameter nil 'background-mode 'light)
-  (if (assq 'background-color default-frame-alist)
-      (setcdr (assq 'background-color default-frame-alist)
-              nano-light-background)
-    (add-to-list 'default-frame-alist
-                 `(background-color . ,nano-light-background)))
-  (if (assq 'background-mode default-frame-alist)
-      (setcdr (assq 'background-mode default-frame-alist) 'light)
-    (add-to-list 'default-frame-alist '(background-mode . light)))
-
-  (dolist (buffer (list " *Minibuf-0*" " *Echo Area 0*"
-                        " *Minibuf-1*" " *Echo Area 1*"))
-    (when (get-buffer buffer)
-      (with-current-buffer buffer
-        (face-remap-add-relative 'default 'nano-faded))))
-  (frame-set-background-mode (selected-frame))
-  (set-background-color nano-light-background))
-
-
-(defun nano-dark ()
-  "Nano theme dark"
-  
-  (interactive)
-  (setq widget-image-enable nil)
-  (setq x-underline-at-descent-line t)
-  (set-foreground-color nano-dark-foreground)
-  (set-face-background 'internal-border nano-dark-background (selected-frame))
-  (custom-set-variables '(frame-background-mode 'dark))
-  (load-theme 'nano t)
-  (set-frame-parameter nil 'background-mode 'dark)
-
-  (if (assq 'background-color default-frame-alist)
-      (setcdr (assq 'background-color default-frame-alist)
-              nano-dark-background)
-    (add-to-list 'default-frame-alist
-                 `(background-color . ,nano-dark-background)))
-  (if (assq 'background-mode default-frame-alist)
-      (setcdr (assq 'background-mode default-frame-alist) 'dark)
-    (add-to-list 'default-frame-alist '(background-mode . dark)))
-
-  (dolist (buffer (list " *Minibuf-0*" " *Echo Area 0*"
-                        " *Minibuf-1*" " *Echo Area 1*"))
-    (when (get-buffer buffer)
-      (with-current-buffer buffer
-        (face-remap-add-relative 'default 'nano-faded))))
-  (frame-set-background-mode (selected-frame))
-  (set-background-color nano-dark-background))
-
-
 ;; (defun inherit (face &optional inherit)
 ;;   "Extract face properties as a property list"
   
@@ -291,10 +232,12 @@ background color that is barely perceptible."
       (custom-theme-set-faces
        'nano
        `(default ((,light (:foreground ,nano-light-foreground
+                           :background ,nano-light-background
                            :weight     ,(face-attribute 'nano-mono :weight)
                            :height     ,(face-attribute 'nano-mono :height)
                            :family     ,(face-attribute 'nano-mono :family)))
                   (,dark  (:foreground ,nano-dark-foreground
+                           :background ,nano-dark-background
                            :weight     ,(face-attribute 'nano-mono :weight)
                            :height     ,(face-attribute 'nano-mono :height)
                            :family     ,(face-attribute 'nano-mono :family)))))
@@ -308,8 +251,10 @@ background color that is barely perceptible."
   (if (not nano-fonts-use)
       (custom-theme-set-faces
        'nano
-       `(default ((,light (:foreground ,nano-light-foreground))
-                  (,dark  (:foreground ,nano-dark-foreground))))
+       `(default ((,light (:foreground ,nano-light-foreground
+                           :background ,nano-light-background))
+                  (,dark  (:foreground ,nano-dark-foreground
+                           :background ,nano-dark-background))))
        `(nano-strong ((,light (:weight bold))
                       (,dark  (:weight bold))))))
 

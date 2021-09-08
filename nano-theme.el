@@ -16,6 +16,10 @@
 ;; You should have received a copy of the GNU General Public License
 ;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ;; ---------------------------------------------------------------------
+
+(eval-when-compile
+  (require 'cl-macs))
+
 (deftheme nano
   "N Λ N O Theme")
 
@@ -681,6 +685,12 @@ background color that is barely perceptible."
             '(org-verse                               ,nano-faded)
             '(org-warning                             ,nano-popout)
 
+            ;; --- Habit --------------------------------------------------------
+            '(org-habit-ready-face                    ,nano-faded)
+            '(org-habit-ready-future-face             ,nano-subtle-i)
+            '(org-habit-overdue-face                  ,nano-faded-i)
+            '(org-habit-overdue-future-face           ,nano-subtle)
+            '(org-habit-alert-future-face             ,nano-subtle)
 
             ;; --- Mu4e ---------------------------------------------------------
             '(mu4e-attach-number-face                ,nano-strong)

@@ -386,7 +386,7 @@ background color that is barely perceptible."
   '(isearch-fail                  ((t (:inherit nano-faded))))
   '(show-paren-match              ((t (:inherit nano-strong))))
   '(show-paren-mismatch           ((t (:inherit nano-critical))))
-  '(lazy-highlight                ((t (:inherit nano-subtle))))
+  '(lazy-highlight                ((t (:inherit nano-faded-i))))
   '(trailing-whitespace           ((t (:inherit nano-subtle))))
   '(secondary-selection           ((t (:inherit nano-subtle))))
   '(completions-annotations       ((t (:inherit nano-faded))))

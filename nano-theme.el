@@ -377,7 +377,7 @@ background color that is barely perceptible."
      '(isearch-fail                  ,nano-faded)
      '(show-paren-match              ,nano-strong)
      '(show-paren-mismatch           ,nano-critical)
-     '(lazy-highlight                ((t (:inherit nano-faded-i))))
+     '(lazy-highlight                ,nano-faded-i)
      '(trailing-whitespace           ,nano-subtle)
      '(secondary-selection           ,nano-subtle)
      '(completions-annotations       ,nano-faded)
@@ -389,12 +389,12 @@ background color that is barely perceptible."
      '(nobreak-space                 ,nano-popout)
      '(help-argument-name            ,nano-faded)
      '(tabulated-list-fake-header    ,nano-strong)
-     '(tool-bar                      ((t (:inherit nano-faded-i))))
+     '(tool-bar                      ,nano-faded-i)
 
      ;; --- TTY faces ----------------------------------------------------
-     '(tty-menu-disabled-face        ((t (:inherit nano-faded-i))))
-     '(tty-menu-enabled-face         ((t (:inherit nano-default-i))))
-     '(tty-menu-selected-face        ((t (:inherit nano-salient-i))))
+     '(tty-menu-disabled-face        ,nano-faded-i)
+     '(tty-menu-enabled-face         ,nano-default-i)
+     '(tty-menu-selected-face        ,nano-salient-i)
 
      ;; --- Windows divider ----------------------------------------------
      `(window-divider                ((,light (:foreground ,nano-light-background))
@@ -449,11 +449,11 @@ background color that is barely perceptible."
 
      ;; --- Company tooltip ----------------------------------------------
      '(company-tooltip                      ,nano-subtle)
-     '(company-tooltip-mouse                ((t (:inherit nano-faded-i))))
-     '(company-tooltip-selection            ((t (:inherit nano-salient-i))))
+     '(company-tooltip-mouse                ,nano-faded-i)
+     '(company-tooltip-selection            ,nano-salient-i)
 
-     '(company-scrollbar-fg                 ((t (:inherit nano-default-i))))
-     '(company-scrollbar-bg                 ((t (:inherit nano-faded-i))))
+     '(company-scrollbar-fg                 ,nano-default-i)
+     '(company-scrollbar-bg                 ,nano-faded-i)
 
      '(company-tooltip-common               ,nano-strong)
      '(company-tooltip-common-selection     ((t (:inherit nano-salient-i
@@ -531,13 +531,13 @@ background color that is barely perceptible."
      '(popup-face                       ((t (:inherit highlight))))
      '(popup-isearch-match              ,nano-popout)
      '(popup-menu-face                  ,nano-subtle)
-     '(popup-menu-mouse-face            ((t (:inherit nano-faded-i))))
-     '(popup-menu-selection-face        ((t (:inherit nano-salient-i))))
+     '(popup-menu-mouse-face            ,nano-faded-i)
+     '(popup-menu-selection-face        ,nano-salient-i)
      '(popup-menu-summary-face          ,nano-faded)
      '(popup-scroll-bar-background-face ,nano-subtle)
      '(popup-scroll-bar-foreground-face ,nano-subtle)
      '(popup-summary-face               ,nano-faded)
-     '(popup-tip-face                   ((t (:inherit nano-popout-i))))
+     '(popup-tip-face                   ,nano-popout-i)
 
      ;; --- Diff ---------------------------------------------------------
      '(diff-header                    ,nano-faded)
@@ -628,8 +628,8 @@ background color that is barely perceptible."
      '(org-footnote                            ,nano-faded)
      '(org-formula                             ,nano-faded)
      '(org-headline-done                       ,nano-faded)
-     '(org-hide                                ((t (:inherit nano-subtle-i))))
-     '(org-indent                              ((t (:inherit nano-subtle-i))))
+     '(org-hide                                ,nano-subtle-i)
+     '(org-indent                              ,nano-subtle-i)
      '(org-latex-and-related                   ,nano-faded)
      '(org-level-1                             ,nano-strong)
      '(org-level-2                             ,nano-strong)

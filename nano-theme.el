@@ -362,7 +362,6 @@ background color that is barely perceptible."
 
   ;; --- Structural ---------------------------------------------------
   '(bold                        ((t (:inherit nano-strong))))
-  ;; '(italic                      ((t (:slant italic))))
   '(italic                      ((t (:inherit nano-faded))))
   '(bold-italic                 ((t (:inherit nano-strong))))
   '(region                      ((t (:inherit nano-subtle))))
@@ -537,8 +536,6 @@ background color that is barely perceptible."
   '(epa-validity-low               ((t (:inherit nano-faded))))
 
   ;; --- Popup --------------------------------------------------------
-
-
   '(popup-face                       ((t (:inherit highlight))))
   '(popup-isearch-match              ((t (:inherit nano-popout))))
   '(popup-menu-face                  ((t (:inherit nano-subtle))))
@@ -562,7 +559,6 @@ background color that is barely perceptible."
   '(diff-refine-changed            ((t (:inherit nano-popout))))
   '(diff-refine-removed            ((t (:inherit nano-faded
                                         :strike-through t))))
-
   ;; --- Message ------------------------------------------------------
   '(message-cited-text-1           ((t (:inherit nano-faded))))
   '(message-cited-text-2           ((t (:inherit nano-faded))))

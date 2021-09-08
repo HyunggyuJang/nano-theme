@@ -219,25 +219,7 @@ background color that is barely perceptible."
 
 ;; ---  Theme ----------------------------------------------------------
 (let ((light     '((background light)))
-      (dark      '((background dark)))
-      (blue
-       '((t (:foreground "#42A5F5"        ; material color blue L400
-             :background "#BBDEFB"))))     ; material color blue L100
-      (cyan
-       '((t (:foreground "#26C6DA"       ; material color cyan L400
-             :background "#B2EBF2"))))    ; material color cyan L100
-      (green
-       '((t (:foreground "#66BB6A"       ; material color green L400
-             :background "#C8E6C9"))))    ; material color green L100
-      (magenta
-       '((t (:foreground "#AB47BC"       ; material color purple L400
-             :background "#E1BEE7"))))    ; material color purple L100
-      (red
-       '((t (:foreground "#EF5350"       ; material color red L400
-             :background "#FFCDD2"))))    ; material color red L100
-      (yellow
-       '((t (:foreground "#FFEE58"       ; material color yellow L400
-             :background "#FFF9C4")))))
+      (dark      '((background dark))))
 
   (custom-theme-set-faces
    'nano
@@ -801,16 +783,21 @@ background color that is barely perceptible."
   '(markdown-table-face                   ((t (:inherit nano-default))))
   '(markdown-url-face                     ((t (:inherit nano-salient))))
 
-
   ;; --- Terminal ----------------------------------------------------
   '(term-bold        ((t (:inherit nano-strong))))
   '(term-color-black ((t (:inherit default))))
-  `(term-color-blue ,blue)
-  `(term-color-cyan ,cyan)
-  `(term-color-green ,green)
-  `(term-color-magenta ,magenta)
-  `(term-color-red ,red)
-  `(term-color-yellow ,yellow)
+  '(term-color-blue ((t (:foreground "#42A5F5"   ;; material color blue L400
+                         :background "#BBDEFB"))))  ;; material color blue L100
+  '(term-color-cyan ((t (:foreground "#26C6DA"   ;; material color cyan L400
+                         :background "#B2EBF2"))))  ;; material color cyan L100
+  '(term-color-green ((t (:foreground "#66BB6A"   ;; material color green L400
+                          :background "#C8E6C9"))))  ;; material color green L100
+  '(term-color-magenta ((t (:foreground "#AB47BC"   ;; material color purple L400
+                            :background "#E1BEE7"))))  ;; material color purple L100
+  '(term-color-red ((t (:foreground "#EF5350"   ;; material color red L400
+                        :background "#FFCDD2"))))  ;; material color red L100
+  '(term-color-yellow ((t (:foreground "#FFEE58"    ;; material color yellow L400
+                           :background "#FFF9C4")))) ;; material color yellow L100
 
   ;; --- Orderless ---------------------------------------------------
   `(orderless-match-face-0 ,blue)

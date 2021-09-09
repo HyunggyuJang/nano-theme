@@ -365,7 +365,7 @@ background color that is barely perceptible."
                                        (:foreground ,nano-light-background))
                                       (,dark
                                        (:foreground ,nano-dark-background))))
-                                   '(window-divider-first-pixel
+                                   '(window-divider-last-pixel
                                      ((,light
                                        (:foreground ,nano-light-background))
                                       (,dark
@@ -605,7 +605,7 @@ background color that is barely perceptible."
                                    '(notmuch-tag-unread ,nano-faded)
                                    '(notmuch-search-date ,nano-faded)
                                    '(notmuch-tag-deleted ,(nano-face-add nano-popout :strike-through t))
-                                   '(notmuch-tag-added ,(nano-face-add nano-popout :strike-through t))
+                                   '(notmuch-tag-added ,(nano-face-add nano-salient :underline t))
                                    '(mu4e-attach-number-face ,nano-strong)
                                    '(mu4e-cited-1-face ,nano-faded)
                                    '(mu4e-cited-2-face ,nano-faded)

@@ -622,14 +622,14 @@ background color that is barely perceptible."
           '(org-verse                               ,nano-faded)
           '(org-warning                             ,nano-popout)
 
-          ;; --- Habit --------------------------------------------------------
+          ;; --- Org Habit ----------------------------------------------------
           '(org-habit-ready-face                    ,nano-faded)
           '(org-habit-ready-future-face             ,nano-subtle-i)
           '(org-habit-clear-face                    ,nano-faded)
           '(org-habit-clear-future-face             ,nano-subtle-i)
           '(org-habit-overdue-face                  ,nano-faded-i)
           '(org-habit-overdue-future-face           ,nano-subtle)
-          '(org-habit-alert                         ,nano-faded-i)
+          '(org-habit-alert-face                    ,nano-faded-i)
           '(org-habit-alert-future-face             ,nano-subtle)
 
           ;; --- Mu4e ---------------------------------------------------------

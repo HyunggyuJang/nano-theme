@@ -612,7 +612,9 @@ background color that is barely perceptible."
             '(org-habit-overdue-future-face ,nano-subtle)
             '(org-habit-alert-face ,nano-faded-i)
             '(org-habit-alert-future-face ,nano-subtle)
-            ;; -- Nano modeline -----------------------
+            ;; -- Perspective mode --------------------
+            '(persp-face-lighter-buffer-not-in-persp ,nano-subtle-i)
+            ;; Nano modeline -----------------------
             ;; '(nano-modeline-active ,nano-subtle)
             ;; '(nano-modeline-active-name ,(nano-face-merge nano-strong nano-subtle))
             ;; '(nano-modeline-active-primary ,(nano-face-merge default nano-subtle))

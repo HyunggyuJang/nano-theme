@@ -294,11 +294,16 @@ background color that is barely perceptible."
             '(nano-popout-i ,nano-popout-i)
             '(nano-critical ,nano-critical)
             '(nano-critical-i ,nano-critical-i)
-            '(mode-line
-              ((,light
-                (:height 0.1 :foreground ,nano-light-background :background ,nano-light-background :underline ,nano-light-subtle))
-               (,dark
-                (:height 0.1 :foreground ,nano-dark-background :background ,nano-dark-background :underline ,nano-dark-subtle))))
+            '(mode-line ((,light (:foreground ,nano-light-background
+                                  :background ,nano-light-foreground
+                                  :box (:line-width 3
+                                        :color ,nano-light-foreground
+                                        :style nil)))
+                         (,dark  (:foreground ,nano-dark-foreground
+                                  :background ,nano-dark-faded
+                                  :box (:line-width 3
+                                        :color ,nano-dark-faded
+                                        :style nil)))))
             '(mode-line-highlight ,nano-popout)
             '(mode-line-buffer-id
               ((t
@@ -306,11 +311,16 @@ background color that is barely perceptible."
             '(mode-line-emphasis
               ((t
                 (:weight regular))))
-            '(mode-line-inactive
-              ((,light
-                (:height 0.1 :foreground ,nano-light-background :background ,nano-light-background :underline ,nano-light-subtle))
-               (,dark
-                (:height 0.1 :foreground ,nano-dark-background :background ,nano-dark-background :underline ,nano-dark-subtle))))
+            '(mode-line-inactive ((,light (:foreground ,nano-light-background
+                                           :background ,nano-light-faded
+                                           :box (:line-width 3
+                                                 :color ,nano-light-faded
+                                                 :style nil)))
+                                  (,dark  (:foreground ,nano-dark-faded
+                                           :background ,nano-dark-subtle
+                                           :box (:line-width 3
+                                                 :color ,nano-dark-subtle
+                                                 :style nil)))))
             '(header-line
               ((,light
                 (:foreground ,nano-light-foreground :background ,nano-light-subtle :inherit nil :box nil))
@@ -603,20 +613,20 @@ background color that is barely perceptible."
             '(org-habit-alert-face ,nano-faded-i)
             '(org-habit-alert-future-face ,nano-subtle)
             ;; -- Nano modeline -----------------------
-            '(nano-modeline-active ,nano-subtle)
-            '(nano-modeline-active-name ,(nano-face-merge nano-strong nano-subtle))
-            '(nano-modeline-active-primary ,(nano-face-merge default nano-subtle))
-            '(nano-modeline-active-secondary ,(nano-face-merge nano-faded nano-subtle))
-            '(nano-modeline-active-status-RO ,nano-popout-i)
-            '(nano-modeline-active-status-RW ,nano-faded-i)
-            '(nano-modeline-active-status-** ,nano-critical)
-            '(nano-modeline-inactive ,nano-subtle)
-            '(nano-modeline-inactive-name ,(nano-face-merge nano-faded nano-subtle))
-            '(nano-modeline-inactive-primary ,(nano-face-merge nano-faded nano-subtle))
-            '(nano-modeline-inactive-secondary ,(nano-face-merge nano-faded nano-subtle))
-            '(nano-modeline-inactive-status-RO ,(nano-face-merge nano-popout nano-subtle))
-            '(nano-modeline-inactive-status-RW ,(nano-face-merge nano-faded nano-subtle))
-            '(nano-modeline-inactive-status-** ,(nano-face-merge nano-critical-i nano-subtle))
+            ;; '(nano-modeline-active ,nano-subtle)
+            ;; '(nano-modeline-active-name ,(nano-face-merge nano-strong nano-subtle))
+            ;; '(nano-modeline-active-primary ,(nano-face-merge default nano-subtle))
+            ;; '(nano-modeline-active-secondary ,(nano-face-merge nano-faded nano-subtle))
+            ;; '(nano-modeline-active-status-RO ,nano-popout-i)
+            ;; '(nano-modeline-active-status-RW ,nano-faded-i)
+            ;; '(nano-modeline-active-status-** ,nano-critical)
+            ;; '(nano-modeline-inactive ,nano-subtle)
+            ;; '(nano-modeline-inactive-name ,(nano-face-merge nano-faded nano-subtle))
+            ;; '(nano-modeline-inactive-primary ,(nano-face-merge nano-faded nano-subtle))
+            ;; '(nano-modeline-inactive-secondary ,(nano-face-merge nano-faded nano-subtle))
+            ;; '(nano-modeline-inactive-status-RO ,(nano-face-merge nano-popout nano-subtle))
+            ;; '(nano-modeline-inactive-status-RW ,(nano-face-merge nano-faded nano-subtle))
+            ;; '(nano-modeline-inactive-status-** ,(nano-face-merge nano-critical-i nano-subtle))
             '(notmuch-tag-face ,nano-faded)
             '(notmuch-tag-unread ,nano-faded)
             '(notmuch-search-date ,nano-faded)

@@ -167,7 +167,7 @@ background color that is barely perceptible."
              (nano-mono
               '(:family "Roboto Mono" :height 140 :weight light))
              (nano-sans
-              '(:family "Roboto" :height 140 :weight light))
+              '(:family "IBM Plex Sans" :height 140 :weight light))
              (light
               '((background light)))
              (dark

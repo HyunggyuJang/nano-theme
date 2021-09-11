@@ -345,7 +345,7 @@ background color that is barely perceptible."
             '(isearch-fail ,nano-faded)
             '(show-paren-match ,nano-strong)
             '(show-paren-mismatch ,nano-critical)
-            '(lazy-highlight ,nano-faded-i)
+            '(lazy-highlight ,nano-subtle)
             '(trailing-whitespace ,nano-subtle)
             '(secondary-selection ,nano-subtle)
             '(completions-annotations ,nano-faded)
@@ -609,7 +609,7 @@ background color that is barely perceptible."
             '(org-habit-alert-future-face ,nano-subtle)
             ;; -- Perspective mode --------------------
             '(persp-face-lighter-buffer-not-in-persp ,nano-subtle-i)
-            ;; Nano modeline -----------------------
+            ;; -- Nano modeline -----------------------
             ;; '(nano-modeline-active ,nano-subtle)
             ;; '(nano-modeline-active-name ,(nano-face-merge nano-strong nano-subtle))
             ;; '(nano-modeline-active-primary ,(nano-face-merge default nano-subtle))
@@ -624,6 +624,9 @@ background color that is barely perceptible."
             ;; '(nano-modeline-inactive-status-RO ,(nano-face-merge nano-popout nano-subtle))
             ;; '(nano-modeline-inactive-status-RW ,(nano-face-merge nano-faded nano-subtle))
             ;; '(nano-modeline-inactive-status-** ,(nano-face-merge nano-critical-i nano-subtle))
+            ;; -- Evil --------------------------------
+            '(evil-ex-substitute-matches ,(nano-face-add nano-popout :strike-through t))
+            '(evil-ex-substitute-replacement ,(nano-face-add nano-salient :underline t))
             '(notmuch-tag-face ,nano-faded)
             '(notmuch-tag-unread ,nano-faded)
             '(notmuch-search-date ,nano-faded)

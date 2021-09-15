@@ -558,7 +558,7 @@ background color that is barely perceptible."
             '(org-document-info ,nano-faded)
             '(org-document-info-keyword ,nano-faded)
             '(org-document-title ,nano-faded)
-            '(org-done ,nano-default)
+            '(org-done ,nano-faded)
             '(org-drawer ,nano-faded)
             '(org-ellipsis ,nano-faded)
             '(org-footnote ,nano-faded)

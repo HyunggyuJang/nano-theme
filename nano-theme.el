@@ -342,6 +342,7 @@ background color that is barely perceptible."
             '(buffer-menu-buffer ,nano-strong)
             '(minibuffer-prompt ,nano-strong)
             '(isearch ,nano-strong)
+            '(pdf-isearch-match ,nano-popout)
             '(isearch-fail ,nano-faded)
             '(show-paren-match ,nano-strong)
             '(show-paren-mismatch ,nano-critical)

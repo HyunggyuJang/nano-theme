@@ -296,9 +296,11 @@ background color that is barely perceptible."
             '(nano-critical-i ,nano-critical-i)
             '(mode-line
               ((,light
-                (:foreground ,nano-light-faded :background ,nano-light-background :overline ,nano-light-subtle))
+                (:foreground ,nano-light-faded :background ,nano-light-background
+                 :overline ,nano-light-subtle :height 0.7))
                (,dark
-                (:foreground ,nano-dark-faded :background ,nano-dark-background :overline ,nano-dark-subtle))))
+                (:foreground ,nano-dark-faded :background ,nano-dark-background
+                 :overline ,nano-dark-subtle :height 0.7))))
             '(mode-line-highlight ,nano-popout)
             '(mode-line-buffer-id
               ((t
@@ -308,9 +310,11 @@ background color that is barely perceptible."
                 (:weight regular))))
             '(mode-line-inactive
               ((,light
-                (:foreground ,nano-light-faded :background ,nano-light-background :overline ,nano-light-subtle))
+                (:foreground ,nano-light-faded :background ,nano-light-background
+                 :overline ,nano-light-subtle :height 0.7))
                (,dark
-                (:foreground ,nano-dark-faded :background ,nano-dark-background :overline ,nano-dark-subtle))))
+                (:foreground ,nano-dark-faded :background ,nano-dark-background
+                 :overline ,nano-dark-subtle :height 0.7))))
             '(header-line
               ((,light
                 (:foreground ,nano-light-foreground :background ,nano-light-subtle :inherit nil :box nil))

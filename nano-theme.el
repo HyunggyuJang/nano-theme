@@ -316,11 +316,6 @@ background color that is barely perceptible."
                 (:foreground ,nano-light-foreground :background ,nano-light-subtle :inherit nil :box nil))
                (,dark
                 (:foreground ,nano-dark-foreground :background ,nano-dark-subtle :inherit nil :box nil))))
-            '(header-line
-              ((,light
-                (:foreground ,nano-light-foreground :background ,nano-light-subtle :inherit nil :box nil))
-               (,dark
-                (:foreground ,nano-dark-foreground :background ,nano-dark-subtle :inherit nil :box nil))))
             '(bold ,nano-strong)
             '(italic ,nano-faded)
             '(bold-italic ,nano-strong)
@@ -603,20 +598,20 @@ background color that is barely perceptible."
             ;; -- Perspective mode --------------------
             '(persp-face-lighter-buffer-not-in-persp ,nano-subtle-i)
             ;; -- Nano modeline -----------------------
-            ;; '(nano-modeline-active ,nano-subtle)
-            ;; '(nano-modeline-active-name ,(nano-face-merge nano-strong nano-subtle))
-            ;; '(nano-modeline-active-primary ,(nano-face-merge default nano-subtle))
-            ;; '(nano-modeline-active-secondary ,(nano-face-merge nano-faded nano-subtle))
-            ;; '(nano-modeline-active-status-RO ,nano-popout-i)
-            ;; '(nano-modeline-active-status-RW ,nano-faded-i)
-            ;; '(nano-modeline-active-status-** ,nano-critical)
-            ;; '(nano-modeline-inactive ,nano-subtle)
-            ;; '(nano-modeline-inactive-name ,(nano-face-merge nano-faded nano-subtle))
-            ;; '(nano-modeline-inactive-primary ,(nano-face-merge nano-faded nano-subtle))
-            ;; '(nano-modeline-inactive-secondary ,(nano-face-merge nano-faded nano-subtle))
-            ;; '(nano-modeline-inactive-status-RO ,(nano-face-merge nano-popout nano-subtle))
-            ;; '(nano-modeline-inactive-status-RW ,(nano-face-merge nano-faded nano-subtle))
-            ;; '(nano-modeline-inactive-status-** ,(nano-face-merge nano-critical-i nano-subtle))
+            '(nano-modeline-active ,nano-subtle)
+            '(nano-modeline-active-name ,(nano-face-merge nano-strong nano-subtle))
+            '(nano-modeline-active-primary ,(nano-face-merge default nano-subtle))
+            '(nano-modeline-active-secondary ,(nano-face-merge nano-faded nano-subtle))
+            '(nano-modeline-active-status-RO ,nano-popout-i)
+            '(nano-modeline-active-status-RW ,nano-faded-i)
+            '(nano-modeline-active-status-** ,nano-critical)
+            '(nano-modeline-inactive ,nano-subtle)
+            '(nano-modeline-inactive-name ,(nano-face-merge nano-faded nano-subtle))
+            '(nano-modeline-inactive-primary ,(nano-face-merge nano-faded nano-subtle))
+            '(nano-modeline-inactive-secondary ,(nano-face-merge nano-faded nano-subtle))
+            '(nano-modeline-inactive-status-RO ,(nano-face-merge nano-popout nano-subtle))
+            '(nano-modeline-inactive-status-RW ,(nano-face-merge nano-faded nano-subtle))
+            '(nano-modeline-inactive-status-** ,(nano-face-merge nano-critical-i nano-subtle))
             ;; -- Evil --------------------------------
             '(evil-ex-substitute-matches ,(nano-face-add nano-popout :strike-through t))
             '(evil-ex-substitute-replacement ,(nano-face-add nano-salient :underline t))

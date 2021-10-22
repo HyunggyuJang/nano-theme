@@ -136,7 +136,7 @@ background color that is barely perceptible."
                  (,@(cadadr face)
                   ,@attrs)))))
            ((symbol-function
-             (function nano-face-merge))
+             (function nano-face-merge-2))
             (lambda
               (face1 face2)
               `((,(caar face1)
@@ -144,7 +144,11 @@ background color that is barely perceptible."
                   ,@(cadar face2)))
                 (,(caadr face1)
                  (,@(cadadr face1)
-                  ,@(cadadr face2)))))))
+                  ,@(cadadr face2))))))
+           ((symbol-function
+             (function nano-face-merge))
+            (lambda (&rest faces)
+              (cl-reduce #'nano-face-merge-2 faces))))
         (let*
             ((nano-light-foreground "#37474F")
              (nano-light-background "#FFFFFF")
@@ -264,7 +268,12 @@ background color that is barely perceptible."
               `((,light
                  (:foreground ,nano-light-critical))
                 (,dark
-                 (:foreground ,nano-dark-critical)))))
+                 (:foreground ,nano-dark-critical))))
+             (highlight
+              `((,light
+                 (:background ,nano-light-highlight))
+                (,dark
+                 (:background ,nano-dark-highlight)))))
           `(custom-theme-set-faces
             'nano
             '(default ,default)
@@ -276,11 +285,7 @@ background color that is barely perceptible."
                 (:foreground ,nano-light-background :background ,nano-light-foreground))
                (,dark
                 (:foreground ,nano-dark-background :background ,nano-dark-foreground))))
-            '(highlight
-              ((,light
-                (:background ,nano-light-highlight))
-               (,dark
-                (:background ,nano-dark-highlight))))
+            '(highlight ,highlight)
             '(nano-subtle ,nano-subtle)
             '(nano-subtle-i ,nano-subtle-i)
             '(nano-faded ,nano-faded)
@@ -345,8 +350,8 @@ background color that is barely perceptible."
             '(trailing-whitespace ,nano-subtle)
             '(secondary-selection ,nano-subtle)
             '(completions-annotations ,nano-faded)
-            '(completions-common-part ,nano-faded)
-            '(completions-first-difference ,default)
+            '(completions-common-part ,nano-strong)
+            '(completions-first-difference ,nano-default)
             '(tooltip ,nano-subtle)
             '(read-multiple-choice-face ,nano-strong)
             '(nobreak-hyphen ,nano-popout)
@@ -748,7 +753,116 @@ background color that is barely perceptible."
             '(term-color-green ,green)
             '(term-color-magenta ,magenta)
             '(term-color-red ,red)
-            '(term-color-yellow ,yellow))))))
+            '(term-color-yellow ,yellow)
+            ;; --- Magit (WIP) ---------------------------------------------------
+            '(magit-blame-highlight                  ,highlight)
+            '(magit-diff-added-highlight             ,(nano-face-merge highlight nano-salient nano-strong))
+            '(magit-diff-base-highlight              ,highlight)
+            '(magit-diff-context-highlight           ,(nano-face-merge highlight nano-faded))
+            '(magit-diff-file-heading-highlight      ,(nano-face-merge highlight nano-strong))
+            '(magit-diff-hunk-heading-highlight      ,nano-default)
+            '(magit-diff-our-highlight               ,highlight)
+            '(magit-diff-removed-highlight           ,(nano-face-merge highlight nano-popout nano-strong))
+            '(magit-diff-their-highlight             ,highlight)
+            '(magit-section-highlight                ,highlight)
+
+            '(magit-blame-heading                    ,(nano-face-merge nano-subtle nano-strong))
+            '(magit-diff-conflict-heading            ,(nano-face-merge nano-subtle nano-strong))
+            '(magit-diff-file-heading                ,nano-strong)
+            '(magit-diff-hunk-heading                ,(nano-face-merge nano-subtle nano-default))
+            '(magit-diff-lines-heading               ,(nano-face-merge nano-subtle nano-strong))
+            '(magit-section-heading                  ,(nano-face-merge nano-salient nano-strong))
+
+            '(magit-bisect-bad                       ,nano-default)
+            '(magit-bisect-good                      ,nano-default)
+            '(magit-bisect-skip                      ,nano-default)
+            '(magit-blame-date                       ,nano-default)
+            '(magit-blame-dimmed                     ,nano-default)
+            '(magit-blame-hash                       ,nano-faded)
+
+            '(magit-blame-margin                     ,nano-default)
+            '(magit-blame-name                       ,nano-default)
+            '(magit-blame-summary                    ,nano-default)
+
+            '(magit-branch-current                   ,(nano-face-merge nano-strong nano-salient))
+            '(magit-branch-local                     ,nano-salient)
+            '(magit-branch-remote                    ,nano-salient)
+            '(magit-branch-remote-head               ,nano-salient)
+            '(magit-branch-upstream                  ,nano-salient)
+
+            '(magit-cherry-equivalent                ,nano-default)
+            '(magit-cherry-unmatched                 ,nano-default)
+
+            '(magit-diff-added                       ,(nano-face-merge highlight nano-salient nano-strong))
+            '(magit-diff-base                        ,nano-default)
+            '(magit-diff-context                     ,(nano-face-merge highlight nano-faded))
+            '(magit-diff-file-heading-selection      ,nano-default)
+            '(magit-diff-hunk-heading-selection      ,nano-default)
+            '(magit-diff-hunk-region                 ,nano-default)
+            '(magit-diff-lines-boundary              ,nano-default)
+            '(magit-diff-our                         ,nano-default)
+            '(magit-diff-removed                     ,(nano-face-merge highlight nano-popout nano-strong))
+            '(magit-diff-revision-summary            ,nano-popout)
+            '(magit-diff-their                       ,nano-default)
+            '(magit-diff-whitespace-warning          ,nano-default)
+            '(magit-diffstat-added                   ,nano-default)
+            '(magit-diffstat-removed                 ,nano-default)
+
+            '(magit-dimmed                           ,nano-faded)
+            '(magit-filename                         ,nano-default)
+            '(magit-hash                             ,nano-faded)
+            '(magit-head                             ,nano-default)
+            '(magit-header-line                      ,nano-default)
+            '(magit-header-line-key                  ,nano-default)
+            '(magit-header-line-log-select           ,nano-default)
+
+            '(magit-keyword                          ,nano-default)
+            '(magit-keyword-squash                   ,nano-default)
+
+            '(magit-log-author                       ,nano-default)
+            '(magit-log-date                         ,nano-default)
+            '(magit-log-graph                        ,nano-default)
+
+            '(magit-mode-line-process                ,nano-default)
+            '(magit-mode-line-process-error          ,nano-default)
+
+            '(magit-process-ng                       ,nano-default)
+            '(magit-process-ok                       ,nano-default)
+
+            '(magit-reflog-amend                     ,nano-default)
+            '(magit-reflog-checkout                  ,nano-default)
+            '(magit-reflog-cherry-pick               ,nano-default)
+            '(magit-reflog-commit                    ,nano-default)
+            '(magit-reflog-merge                     ,nano-default)
+            '(magit-reflog-other                     ,nano-default)
+            '(magit-reflog-rebase                    ,nano-default)
+            '(magit-reflog-remote                    ,nano-default)
+            '(magit-reflog-reset                     ,nano-default)
+            '(magit-refname                          ,nano-default)
+            '(magit-refname-pullreq                  ,nano-default)
+            '(magit-refname-stash                    ,nano-default)
+            '(magit-refname-wip                      ,nano-default)
+
+            '(magit-section-heading-selection        ,nano-default)
+            '(magit-section-secondary-heading        ,nano-default)
+            '(magit-sequence-done                    ,nano-default)
+            '(magit-sequence-drop                    ,nano-default)
+            '(magit-sequence-exec                    ,nano-default)
+            '(magit-sequence-head                    ,nano-default)
+            '(magit-sequence-onto                    ,nano-default)
+            '(magit-sequence-part                    ,nano-default)
+            '(magit-sequence-pick                    ,nano-default)
+            '(magit-sequence-stop                    ,nano-default)
+
+            '(magit-signature-bad                    ,nano-default)
+            '(magit-signature-error                  ,nano-default)
+            '(magit-signature-expired                ,nano-default)
+            '(magit-signature-expired-key            ,nano-default)
+            '(magit-signature-good                   ,nano-default)
+            '(magit-signature-revoked                ,nano-default)
+            '(magit-signature-untrusted              ,nano-default)
+
+            '(magit-tag                              ,nano-default-i))))))
   (nano-set-faces))
 
 ;;;###autoload

@@ -25,7 +25,7 @@
 
 (defgroup nano nil
   "N Λ N O"
-  :group 'nil)
+  :group 'convenience)
 
 (defgroup nano-light nil
   "Light theme color palette" :group 'nano)

@@ -219,6 +219,11 @@ background color that is barely perceptible."
                  (:foreground ,nano-light-faded))
                 (,dark
                  (:foreground ,nano-dark-faded))))
+             (nano-faded-background
+              `((,light
+                 (:background ,nano-light-faded))
+                (,dark
+                 (:background ,nano-dark-faded))))
              (nano-faded-i
               `((,light
                  (:foreground ,nano-light-background :background ,nano-light-faded))
@@ -751,7 +756,8 @@ background color that is barely perceptible."
             '(hydra-face-blue ,nano-salient)
             '(ansi-color-black                       ,nano-default)
             '(ansi-color-bold                         ,nano-strong)
-            '(ansi-color-bright-black                 ,(nano-face-merge nano-default nano-strong))
+            '(ansi-color-bright-black                 ,(nano-face-merge nano-faded nano-strong))
+            '(vterm-color-black                      ,(nano-face-merge nano-default nano-faded-background nano-strong))
             '(ansi-color-faint                         ,nano-faded)
             '(ansi-color-fast-blink                    ,nano-faded)
             '(ansi-color-slow-blink                    ,nano-faded)

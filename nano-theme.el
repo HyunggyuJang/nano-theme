@@ -193,7 +193,7 @@ background color that is barely perceptible."
                  (:foreground "#B71C1C" :background "#f36c60"))))
              (yellow
               '((t
-                 (:foreground "#FFA000" :background "#fff59d"))))
+                 (:foreground "#FFA000" :background "#FFA000"))))
              (default
                `((,light
                   (:foreground ,nano-light-foreground :background ,nano-light-background ,@nano-mono))
@@ -749,7 +749,29 @@ background color that is barely perceptible."
             ;; --- Hydra (WIP) ---------------------------------------------------
             '(hydra-face-red ,nano-popout)
             '(hydra-face-blue ,nano-salient)
-
+            '(ansi-color-black                       ,nano-default)
+            '(ansi-color-bold                         ,nano-strong)
+            '(ansi-color-bright-black                 ,nano-strong)
+            '(ansi-color-faint                         ,nano-faded)
+            '(ansi-color-fast-blink                    ,nano-faded)
+            '(ansi-color-slow-blink                    ,nano-faded)
+            '(ansi-color-inverse                   ,nano-default-i)
+            '(ansi-color-italic                        ,nano-faded)
+            '(ansi-color-underline                     ,nano-faded)
+            '(ansi-color-blue           ((t (:foreground "#42A5F5")))) ;; material color blue L400
+            '(ansi-color-bright-blue    ((t (:background "#BBDEFB")))) ;; material color blue L100
+            '(ansi-color-cyan           ((t (:foreground "#26C6DA")))) ;; material color cyan L400
+            '(ansi-color-bright-cyan    ((t (:background "#B2EBF2")))) ;; material color cyan L100
+            '(ansi-color-green          ((t (:foreground "#66BB6A")))) ;; material color green L400
+            '(ansi-color-bright-green   ((t (:background "#C8E6C9")))) ;; material color green L100
+            '(ansi-color-magenta        ((t (:foreground "#AB47BC")))) ;; material color purple L400
+            '(ansi-color-bright-magenta ((t (:background "#E1BEE7")))) ;; material color purple L100
+            '(ansi-color-red            ((t (:foreground "#EF5350")))) ;; material color red L400
+            '(ansi-color-bright-red     ((t (:background "#FFCDD2")))) ;; material color red L100
+            '(ansi-color-white          ,nano-subtle)
+            '(ansi-color-bright-white   ,default)
+            '(ansi-color-yellow         ((t (:foreground "#FFEE58")))) ;; material color yellow L400
+            '(ansi-color-bright-yellow  ((t (:background "#FFF9C4")))) ;; material color yellow L100
             '(term-bold ,nano-strong)
             '(term-color-black ,default)
             '(term-color-blue ,blue)

@@ -178,10 +178,10 @@ background color that is barely perceptible."
               '((background dark)))
              (blue
               '((t
-                 (:foreground "#4dd0e1" :background "#2196f3"))))
+                 (:foreground "#2196f3" :background "#2196f3"))))
              (cyan
               '((t
-                 (:foreground "#81d4fa" :background "#00796b"))))
+                 (:foreground "#00796b" :background "#00796b"))))
              (green
               '((t
                  (:foreground "#8bc34a" :background "#558b2f"))))
@@ -190,7 +190,7 @@ background color that is barely perceptible."
                  (:foreground "#E1BEE7" :background "#AB47BC"))))
              (red
               '((t
-                 (:foreground "#f36c60" :background "#B71C1C"))))
+                 (:foreground "#f36c60" :background "#f36c60"))))
              (yellow
               '((t
                  (:foreground "#FFA000" :background "#FFA000"))))

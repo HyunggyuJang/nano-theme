@@ -751,7 +751,8 @@ background color that is barely perceptible."
             '(markdown-strike-through-face ,nano-faded)
             '(markdown-table-face ,nano-default)
             '(markdown-url-face ,nano-salient)
-            ;; --- Hydra (WIP) ---------------------------------------------------
+            '(whitespace-indentation ,nano-subtle)
+            ;; Hydra (WIP) ---------------------------------------------------
             '(hydra-face-red ,nano-popout)
             '(hydra-face-blue ,nano-salient)
             '(ansi-color-black                       ,nano-default)

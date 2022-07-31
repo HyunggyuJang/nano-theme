@@ -751,7 +751,7 @@ background color that is barely perceptible."
             '(hydra-face-blue ,nano-salient)
             '(ansi-color-black                       ,nano-default)
             '(ansi-color-bold                         ,nano-strong)
-            '(ansi-color-bright-black                 ,nano-strong)
+            '(ansi-color-bright-black                 ,(nano-face-merge nano-default nano-strong))
             '(ansi-color-faint                         ,nano-faded)
             '(ansi-color-fast-blink                    ,nano-faded)
             '(ansi-color-slow-blink                    ,nano-faded)

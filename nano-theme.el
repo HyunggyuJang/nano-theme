@@ -178,22 +178,22 @@ background color that is barely perceptible."
               '((background dark)))
              (blue
               '((t
-                 (:foreground "#42A5F5" :background "#BBDEFB"))))
+                 (:foreground "#4dd0e1" :background "#2196f3"))))
              (cyan
               '((t
-                 (:foreground "#26C6DA" :background "#B2EBF2"))))
+                 (:foreground "#81d4fa" :background "#00796b"))))
              (green
               '((t
-                 (:foreground "#66BB6A" :background "#C8E6C9"))))
+                 (:foreground "#8bc34a" :background "#558b2f"))))
              (magenta
               '((t
-                 (:foreground "#AB47BC" :background "#E1BEE7"))))
+                 (:foreground "#b39ddb" :background "#4527A0"))))
              (red
               '((t
-                 (:foreground "#EF5350" :background "#FFCDD2"))))
+                 (:foreground "#f36c60" :background "#B71C1C"))))
              (yellow
               '((t
-                 (:foreground "#FFEE58" :background "#FFF9C4"))))
+                 (:foreground "#fff59d" :background "#FFA000"))))
              (default
                `((,light
                   (:foreground ,nano-light-foreground :background ,nano-light-background ,@nano-mono))

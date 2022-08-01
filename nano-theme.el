@@ -168,6 +168,7 @@ background color that is barely perceptible."
              (nano-dark-strong "#FFFFFF")
              (nano-dark-popout "#D08770")
              (nano-dark-critical "#EBCB8B")
+             (magenta-color "#AB47BC")
              (nano-mono
               '(:family "Roboto Mono" :height 140 :weight light))
              (nano-sans
@@ -186,8 +187,8 @@ background color that is barely perceptible."
               '((t
                  (:foreground "#8bc34a" :background "#558b2f"))))
              (magenta
-              '((t
-                 (:foreground "#E1BEE7" :background "#AB47BC"))))
+              `((t
+                 (:foreground "#E1BEE7" :background ,megenta-color))))
              (red
               '((t
                  (:foreground "#f36c60" :background "#f36c60"))))
@@ -752,6 +753,9 @@ background color that is barely perceptible."
             '(markdown-table-face ,nano-default)
             '(markdown-url-face ,nano-salient)
             '(whitespace-indentation ,nano-subtle)
+            '(makefile-space ,nano-salient-i)
+            '(sh-heredoc ,nano-subtle)
+            '(sh-quoted-exec ,nano-salient)
             ;; Hydra (WIP) ---------------------------------------------------
             '(hydra-face-red ,nano-popout)
             '(hydra-face-blue ,nano-salient)
@@ -771,7 +775,7 @@ background color that is barely perceptible."
             '(ansi-color-bright-cyan    ((t (:background "#B2EBF2")))) ;; material color cyan L100
             '(ansi-color-green          ((t (:foreground "#66BB6A")))) ;; material color green L400
             '(ansi-color-bright-green   ((t (:background "#C8E6C9")))) ;; material color green L100
-            '(ansi-color-magenta        ((t (:foreground "#AB47BC")))) ;; material color purple L400
+            '(ansi-color-magenta        ((t (:foreground ,magenta-color)))) ;; material color purple L400
             '(ansi-color-bright-magenta ((t (:background "#E1BEE7")))) ;; material color purple L100
             '(ansi-color-red            ((t (:foreground "#EF5350")))) ;; material color red L400
             '(ansi-color-bright-red     ((t (:background "#FFCDD2")))) ;; material color red L100

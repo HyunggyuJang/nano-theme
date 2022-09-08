@@ -188,7 +188,7 @@ background color that is barely perceptible."
                  (:foreground "#8bc34a" :background "#558b2f"))))
              (magenta
               `((t
-                 (:foreground "#E1BEE7" :background ,megenta-color))))
+                 (:foreground "#E1BEE7" :background ,magenta-color))))
              (red
               '((t
                  (:foreground "#f36c60" :background "#f36c60"))))

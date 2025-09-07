@@ -202,9 +202,9 @@ background color that is barely perceptible."
                   (:foreground ,nano-dark-foreground :background ,nano-dark-background ,@nano-mono))))
              (nano-strong
               `((,light
-                 (:weight medium))
+                 (:weight normal))
                 (,dark
-                 (:weight medium))))
+                 (:weight normal))))
              (nano-subtle
               `((,light
                  (:background ,nano-light-subtle))
@@ -252,9 +252,9 @@ background color that is barely perceptible."
                  (:foreground ,nano-dark-background :background ,nano-dark-salient))))
              (nano-strong-i
               `((,light
-                 (:foreground ,nano-light-background :background ,nano-light-strong :weight medium))
+                 (:foreground ,nano-light-background :background ,nano-light-strong :weight normal))
                 (,dark
-                 (:foreground ,nano-dark-background :background ,nano-dark-strong :weight medium))))
+                 (:foreground ,nano-dark-background :background ,nano-dark-strong :weight normal))))
              (nano-popout
               `((,light
                  (:foreground ,nano-light-popout))
@@ -313,10 +313,10 @@ background color that is barely perceptible."
             '(mode-line-highlight ,nano-popout)
             '(mode-line-buffer-id
               ((t
-                (:weight semibold))))
+                (:weight regular))))
             '(mode-line-emphasis
               ((t
-                (:weight semibold))))
+                (:weight regular))))
             '(mode-line-inactive
               ((,light
                 (:foreground ,nano-light-faded :background ,nano-light-background :overline ,nano-light-subtle))

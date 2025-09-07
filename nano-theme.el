@@ -172,7 +172,7 @@ background color that is barely perceptible."
              (nano-mono
               '(:family "Roboto Mono" :height 140 :weight light))
              (nano-sans
-              '(:family "Roboto Slab" :weight light))
+              '(:family "Roboto" :weight light))
              (light
               '((background light)))
              (dark
